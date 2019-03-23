@@ -1,5 +1,11 @@
 このプロジェクトは[Create React App]で作成されました。(https://github.com/facebook/create-react-app).
 
+## まずはじめに
+
+任意のディレクトリにgit cloneを行ったのちに、以下のコマンドを実行することで、依存関係にあるライブラリをinstallします。（予め、npmはダウンロードしておいてください。）
+
+### `npm install`
+
 ## 利用可能なスクリプト
 
 プロジェクトディレクトリにて、以下のコマンドを実行できます。
