@@ -73,6 +73,7 @@ class Top extends Component{
         <Dialog open={this.props.isAccepted} aria-labelledby="simple-dialog-title">
           { this.props.submissions.length > 0 && <DialogTitle id="simple-dialog-title">Conglatulation!<span className="dialog-span">チーム「{this.props.submissions[0].userId}」</span></DialogTitle>}
         </Dialog>
+        
       </div>
     )
   }

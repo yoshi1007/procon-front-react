@@ -5,15 +5,21 @@ export const READ_SUBMISSIONS = 'READ_SUBMISSIONS'
 export const GET_REMAINING_TIME = 'GET_REMAINING_TIME'
 export const RESET_IS_ACCEPTED_FLAG = 'RESET_ISCORRECT_FLAG'
 
+// 終了時刻
 const endDate = '2019-06-28 19:30:00'
+// 参加者のid
+const participantIds = [
+  "OOOlolOOO",
+  "k17145kf",
+  "GeekTK",
+  "ellery"
+]
 
 export const getSubmissions = () => async dispatch => {
   const res = await myHttpClient.get(`${URL}/submission_records/recent`)
   console.log(res)
   const response = _.filter(res.data, (submission)=>{
-    return submission.userId === "OOOlolOOO" ||
-    submission.userId === "k17145kf" ||
-    submission.userId === "GeekTK"
+    return participantIds.indexOf(submission.userId) !== -1
   })
   dispatch({type:READ_SUBMISSIONS, res: response})
 }

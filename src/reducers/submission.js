@@ -23,17 +23,14 @@ const initialState = {
 export default (state=initialState, action) => {
   switch(action.type){
     case READ_SUBMISSIONS :
-      if(action.res.length > 0){
-        if(action.res[0].status===4){
-          if(state.latestJudgeId!==action.res[0].judgeId){
-            return { ...state, submissions: action.res, isAccepted: true, latestJudgeId: action.res[0].judgeId}
-          }
-          return state
-        } else {
-          return { ...state, submissions: action.res }
+      if(action.res.length > 0 && action.res[0].status===4){
+        if(state.latestJudgeId!==action.res[0].judgeId){
+          return { ...state, submissions: action.res, isAccepted: true, latestJudgeId: action.res[0].judgeId}
         }
+        return state
+      } else {
+        return { ...state, submissions: action.res }
       }
-      return state
 
     case GET_REMAINING_TIME :
       return { ...state, remainingTime: action.remainingTime}
