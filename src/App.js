@@ -12,7 +12,6 @@ export default class App extends Component {
       <Provider store={store}>
         <Header />
         <Routes />
-        <Footer />
       </Provider>
     );
   }
