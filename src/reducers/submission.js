@@ -1,5 +1,4 @@
 import { READ_SUBMISSIONS, GET_REMAINING_TIME, RESET_IS_ACCEPTED_FLAG } from '../actions/submission';
-import _ from 'lodash';
 
 const initialState = {
   submissions:{},

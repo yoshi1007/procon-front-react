@@ -1,19 +1,9 @@
 import _ from 'lodash';
 
-import { URL, myHttpClient } from './index';
+import { URL, myHttpClient, participantIds, endDate } from './index';
 export const READ_SUBMISSIONS = 'READ_SUBMISSIONS'
 export const GET_REMAINING_TIME = 'GET_REMAINING_TIME'
 export const RESET_IS_ACCEPTED_FLAG = 'RESET_ISCORRECT_FLAG'
-
-// 終了時刻
-const endDate = '2019-06-28 19:30:00'
-// 参加者のid
-const participantIds = [
-  "OOOlolOOO",
-  "k17145kf",
-  "GeekTK",
-  "ellery"
-]
 
 export const getSubmissions = () => async dispatch => {
   const res = await myHttpClient.get(`${URL}/submission_records/recent`)
