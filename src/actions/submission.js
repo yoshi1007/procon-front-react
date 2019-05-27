@@ -23,6 +23,6 @@ export const getRemainingTime = () => async dispatch => {
   dispatch({type:GET_REMAINING_TIME, remainingTime})
 }
 
-export const resetFlag = () => async dispatch => {
+export const resetFlag = () => dispatch => {
   dispatch({type:RESET_IS_ACCEPTED_FLAG})
 }
