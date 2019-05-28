@@ -12,10 +12,10 @@ export const participantIds = [
 ]
 
 // 開始時刻
-export const startDate = '2019-05-01 18:00:00'
+export const startDate = '2019-06-14 18:00:00'
 
 // 終了時刻
-export const endDate = '2019-06-28 19:30:00'
+export const endDate = '2019-06-14 19:30:00'
 
 export const myHttpClient = axios.create({
   'Access-Control-Allow-Origin':'*'

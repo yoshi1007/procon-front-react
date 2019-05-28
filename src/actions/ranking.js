@@ -7,15 +7,6 @@ export const GET_RANKING = 'GET_RANKING'
 export const getRanking = () => async dispatch => {
   const start = new Date(startDate)
   let rankingArray = []
-  // participantIds.map(async(id) => {
-  //   const res = myHttpClient.get(`${URL}/solutions/users/${id}`)
-  //   console.log(res)
-  //   const result = _.filter(res.data, record => {
-  //     console.log(record.submissionDate > start.getTime())
-  //     return record.submissionDate > start.getTime()
-  //   })
-  //   rankingArray.unshift({id: id, solutions: result.length})
-  // })
   console.log(participantIds)
   for(let i in participantIds){
     console.log(participantIds[i])
