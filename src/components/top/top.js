@@ -12,6 +12,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 
+import Ranking from '../ranking/ranking';
 import RenderSubmissions from './renderSubmissions';
 import { getSubmissions, getRemainingTime, resetFlag } from '../../actions/submission';
 
@@ -36,23 +37,25 @@ class Top extends Component{
               </div>
             </Paper>
 
-            <Paper className={classes.root}>
-              <Table className={classes.table}>
-                <TableHead>
-                  <TableRow>
-                    <TableCell align="left">チーム名</TableCell>
-                    <TableCell>問題名</TableCell>
-                    <TableCell>言語</TableCell>
-                    <TableCell>投稿時間</TableCell>
-                    <TableCell>結果</TableCell>
-                  </TableRow>
-                </TableHead>
-                <TableBody>
-                  <RenderSubmissions submissions={this.props.submissions} status={this.props.status} />
-                </TableBody>
-              </Table>
-            </Paper>
-
+            <div className={classes.flex}>
+              <Paper className={classes.list}>
+                <Table className={classes.table}>
+                  <TableHead>
+                    <TableRow>
+                      <TableCell align="left">チーム名</TableCell>
+                      <TableCell>問題名</TableCell>
+                      <TableCell>言語</TableCell>
+                      <TableCell>投稿時間</TableCell>
+                      <TableCell>結果</TableCell>
+                    </TableRow>
+                  </TableHead>
+                  <TableBody>
+                    <RenderSubmissions submissions={this.props.submissions} status={this.props.status} />
+                  </TableBody>
+                </Table>
+              </Paper>
+              <Ranking />
+            </div>
           </CardContent>
         </Card>
 
@@ -80,6 +83,12 @@ const styles = theme => ({
     marginTop: theme.spacing.unit * 3,
     overflowX: 'auto',
   },
+  list: {
+    width: '100%',
+    marginTop: theme.spacing.unit * 3,
+    overflowX: 'auto',
+    marginRight: '10px',
+  },
   table: {
     minWidth: 700,
   },
@@ -98,6 +107,9 @@ const styles = theme => ({
   pos: {
     marginBottom: 12,
   },
+  flex: {
+    display: 'flex'
+  }
 });
 
 export default withStyles(styles)(connect(mapStateToProps, mapDispatchToProps)(Top))

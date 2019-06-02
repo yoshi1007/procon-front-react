@@ -23,27 +23,21 @@ class Ranking extends Component{
   render(){
     const { classes } = this.props
     return(
-      <div id="main">
-        <Card className={classes.card}>
-          <CardContent>
-
-            <Paper className={classes.root}>
-              <Table className={classes.table}>
-                <TableHead>
-                  <TableRow>
-                    <TableCell align="left">順位</TableCell>
-                    <TableCell>チーム名</TableCell>
-                    <TableCell>解答数</TableCell>
-                  </TableRow>
-                </TableHead>
-                <TableBody>
-                  <RenderRanking ranking={this.props.ranking} />
-                </TableBody>
-              </Table>
-            </Paper>
-
-          </CardContent>
-        </Card>
+      <div id="ranking">
+        <Paper className={classes.root}>
+          <Table className={classes.table}>
+            <TableHead>
+              <TableRow>
+                <TableCell align="left">順位</TableCell>
+                <TableCell>チーム名</TableCell>
+                <TableCell>解答数</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              <RenderRanking ranking={this.props.ranking} />
+            </TableBody>
+          </Table>
+        </Paper>
       </div>
     )
   }
