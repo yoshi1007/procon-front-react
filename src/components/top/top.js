@@ -84,10 +84,11 @@ const styles = theme => ({
     overflowX: 'auto',
   },
   list: {
-    width: '100%',
+    width: '70%',
     marginTop: theme.spacing.unit * 3,
     overflowX: 'auto',
     marginRight: '10px',
+    height: '100%',
   },
   table: {
     minWidth: 700,

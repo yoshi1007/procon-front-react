@@ -9,11 +9,14 @@ export const participantIds = [
   "MiuraMiumiu",
   "idsigma",
   "Lobesta",
-  "t18140526"
+  "t18140526",
+  "graveslayer",
+  "K18140038",
+  "yoyoino"
 ]
 
 // 開始時刻
-export const startDate = '2019-06-14 18:00:00'
+export const startDate = '2019-05-31 18:00:00'
 
 // 終了時刻
 export const endDate = '2019-06-14 19:30:00'

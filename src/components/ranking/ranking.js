@@ -15,30 +15,27 @@ import { getRanking } from '../../actions/ranking';
 
 class Ranking extends Component{
 
-  componentDidMount(){
+  onClickToGetRanking(){
     this.props.getRanking()
-    setInterval(()=>this.props.getRanking(),60000)
   }
 
   render(){
     const { classes } = this.props
     return(
-      <div id="ranking">
-        <Paper className={classes.root}>
-          <Table className={classes.table}>
-            <TableHead>
-              <TableRow>
-                <TableCell align="left">順位</TableCell>
-                <TableCell>チーム名</TableCell>
-                <TableCell>解答数</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              <RenderRanking ranking={this.props.ranking} />
-            </TableBody>
-          </Table>
-        </Paper>
-      </div>
+      <Paper className={classes.root}>
+        <Table className={classes.table} onClick={()=>this.onClickToGetRanking()}>
+          <TableHead>
+            <TableRow>
+              <TableCell align="left">順位</TableCell>
+              <TableCell>チーム名</TableCell>
+              <TableCell>解答数</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            <RenderRanking ranking={this.props.ranking} />
+          </TableBody>
+        </Table>
+      </Paper>
     )
   }
 }
@@ -51,12 +48,10 @@ const mapDispatchToProps = ({ getRanking })
 
 const styles = theme => ({
   root: {
-    width: '100%',
+    width: '30%',
     marginTop: theme.spacing.unit * 3,
     overflowX: 'auto',
-  },
-  table: {
-    minWidth: 700,
+    height: '100%',
   },
   card: {
     minHeight: 1000,
