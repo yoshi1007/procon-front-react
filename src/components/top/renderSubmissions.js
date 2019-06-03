@@ -1,15 +1,9 @@
 import React from 'react';
 import _ from 'lodash';
 import moment from 'moment';
-import { withStyles } from '@material-ui/core/styles';
+import { StyledTableCell } from './top';
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
-
-const StyledTableCell = withStyles(theme => ({
-  body: {
-    fontSize: 18,
-  },
-}))(TableCell);
 
 export default (props) => (
    _.map(props.submissions, submission => (

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
+import { StyledTableCell } from '../top/top';
 import Paper from '@material-ui/core/Paper';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
@@ -45,12 +46,6 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = ({ getRanking })
-
-const StyledTableCell = withStyles(theme => ({
-  head: {
-    fontSize: 18,
-  },
-}))(TableCell);
 
 const styles = theme => ({
   root: {

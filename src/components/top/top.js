@@ -76,10 +76,13 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = ({ getSubmissions, getRemainingTime, resetFlag })
 
-const StyledTableCell = withStyles(theme => ({
+export const StyledTableCell = withStyles(theme => ({
   head: {
     fontSize: 18,
   },
+  body: {
+    fontSize: 18,
+  }
 }))(TableCell);
 
 const styles = theme => ({

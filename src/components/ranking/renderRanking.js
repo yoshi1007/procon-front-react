@@ -1,15 +1,9 @@
 import React from 'react';
 import _ from 'lodash';
-import { withStyles } from '@material-ui/core/styles';
+import { StyledTableCell } from '../top/top';
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
-const StyledTableCell = withStyles(theme => ({
-  body: {
-    fontSize: '18px',
-  }
-}))(TableCell);
 
 export default (props) => (
    _.map(props.ranking, item => (
