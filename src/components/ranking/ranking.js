@@ -26,9 +26,9 @@ class Ranking extends Component{
         <Table className={classes.table} onClick={()=>this.onClickToGetRanking()}>
           <TableHead>
             <TableRow>
-              <TableCell align="left">順位</TableCell>
-              <TableCell>チーム名</TableCell>
-              <TableCell>解答数</TableCell>
+              <StyledTableCell align="left">順位</StyledTableCell>
+              <StyledTableCell>チーム名</StyledTableCell>
+              <StyledTableCell>解答数</StyledTableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -45,6 +45,12 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = ({ getRanking })
+
+const StyledTableCell = withStyles(theme => ({
+  head: {
+    fontSize: 18,
+  },
+}))(TableCell);
 
 const styles = theme => ({
   root: {

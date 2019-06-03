@@ -11,7 +11,6 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-
 import Ranking from '../ranking/ranking';
 import RenderSubmissions from './renderSubmissions';
 import { getSubmissions, getRemainingTime, resetFlag } from '../../actions/submission';
@@ -42,11 +41,11 @@ class Top extends Component{
                 <Table className={classes.table}>
                   <TableHead>
                     <TableRow>
-                      <TableCell align="left">チーム名</TableCell>
-                      <TableCell>問題名</TableCell>
-                      <TableCell>言語</TableCell>
-                      <TableCell>投稿時間</TableCell>
-                      <TableCell>結果</TableCell>
+                      <StyledTableCell align="left">チーム名</StyledTableCell>
+                      <StyledTableCell>問題名</StyledTableCell>
+                      <StyledTableCell>言語</StyledTableCell>
+                      <StyledTableCell>投稿時間</StyledTableCell>
+                      <StyledTableCell>結果</StyledTableCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>
@@ -76,6 +75,12 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = ({ getSubmissions, getRemainingTime, resetFlag })
+
+const StyledTableCell = withStyles(theme => ({
+  head: {
+    fontSize: 18,
+  },
+}))(TableCell);
 
 const styles = theme => ({
   root: {

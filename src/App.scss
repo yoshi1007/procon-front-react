@@ -4,6 +4,7 @@
   }
 }
 
+// topの画面
 #main{
   margin-top: 50px;
   .remaining-time{
@@ -18,6 +19,7 @@
       }
     }
   }
+  // 結果
   .correct-answer{
     font-weight: bold;
     color: #005937;
@@ -31,6 +33,7 @@
   color: red;
 }
 
+// 順位の王冠
 .crown{
   margin-right: 5px;
 }
