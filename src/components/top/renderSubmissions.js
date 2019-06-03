@@ -2,7 +2,6 @@ import React from 'react';
 import _ from 'lodash';
 import moment from 'moment';
 import { StyledTableCell } from './top';
-import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 
 export default (props) => (

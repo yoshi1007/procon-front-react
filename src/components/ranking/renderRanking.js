@@ -1,7 +1,6 @@
 import React from 'react';
 import _ from 'lodash';
 import { StyledTableCell } from '../top/top';
-import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 

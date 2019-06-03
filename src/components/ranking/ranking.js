@@ -3,11 +3,8 @@ import { connect } from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
 import { StyledTableCell } from '../top/top';
 import Paper from '@material-ui/core/Paper';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Snackbar from '@material-ui/core/Snackbar';
@@ -35,9 +32,9 @@ class Ranking extends Component{
         <Table className={classes.table} onClick={()=>this.onClickToGetRanking()}>
           <TableHead>
             <TableRow>
-              <StyledTableCell align="left">順位</StyledTableCell>
+              <StyledTableCell align="left">暫定順位</StyledTableCell>
               <StyledTableCell>チーム名</StyledTableCell>
-              <StyledTableCell>解答数</StyledTableCell>
+              <StyledTableCell>正答数</StyledTableCell>
             </TableRow>
           </TableHead>
           <TableBody>

@@ -81,7 +81,8 @@ export const StyledTableCell = withStyles(theme => ({
     fontSize: 18,
   },
   body: {
-    fontSize: 18,
+    fontSize: 30,
+    padding: '20px 56px 20px 24px'
   }
 }))(TableCell);
 

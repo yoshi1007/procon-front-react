@@ -13,7 +13,10 @@ export const participantIds = [
   "graveslayer",
   "K18140038",
   "yoyoino",
-  "ktsMaegawa"
+  "ktsMaegawa",
+  "iizukayu",
+  "Yang33",
+  "sae18140868"
 ]
 
 // 開始時刻

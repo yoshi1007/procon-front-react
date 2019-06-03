@@ -3,15 +3,15 @@ import { READ_SUBMISSIONS, GET_REMAINING_TIME, RESET_IS_ACCEPTED_FLAG } from '..
 const initialState = {
   submissions:{},
   status:[
-    'COMPILEERROR',
-    'WRONGANSWER',
-    'TIMELIMIT',
-    'MEMORYLIMIT',
+    'COMPILE-ERROR',
+    'WRONG-ANSWER',
+    'TIME-LIMIT',
+    'MEMORY-LIMIT',
     'ACCEPTED',
     'WAITING',
-    'OUTPUTLIMIT',
-    'RUNTIMEERROR',
-    'PRESENTATIONERROR',
+    'OUTPUT-LIMIT',
+    'RUNTIME-ERROR',
+    'PRESENTATION-ERROR',
     'RUNNING'
   ],
   remainingTime: '',
