@@ -10,9 +10,12 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
+import Snackbar from '@material-ui/core/Snackbar';
+import IconButton from '@material-ui/core/IconButton';
+import CloseIcon from '@material-ui/icons/Close';
 
 import RenderRanking from './renderRanking';
-import { getRanking } from '../../actions/ranking';
+import { getRanking, closeSnackbar } from '../../actions/ranking';
 
 class Ranking extends Component{
 
@@ -20,8 +23,13 @@ class Ranking extends Component{
     this.props.getRanking()
   }
 
+  handleClose(){
+    this.props.closeSnackbar()
+  }
+
   render(){
     const { classes } = this.props
+    console.log(this.props)
     return(
       <Paper className={classes.root}>
         <Table className={classes.table} onClick={()=>this.onClickToGetRanking()}>
@@ -36,16 +44,37 @@ class Ranking extends Component{
             <RenderRanking ranking={this.props.ranking} />
           </TableBody>
         </Table>
+
+        <Snackbar
+          anchorOrigin={{
+            vertical: 'bottom',
+            horizontal: 'right',
+          }}
+          open={this.props.isOpenSnackBar}
+          autoHideDuration={1000}
+          message="ランキングを更新しました"
+          action={[
+            <IconButton
+              key="close"
+              aria-label="Close"
+              color="inherit"
+              onClick={()=>this.handleClose()}
+              >
+            <CloseIcon />
+          </IconButton>,
+         ]}
+        />
       </Paper>
     )
   }
 }
 
 const mapStateToProps = state => ({
-  ranking: state.ranking.ranking
+  ranking: state.ranking.ranking,
+  isOpenSnackBar: state.ranking.isOpenSnackBar
 })
 
-const mapDispatchToProps = ({ getRanking })
+const mapDispatchToProps = ({ getRanking, closeSnackbar })
 
 const styles = theme => ({
   root: {

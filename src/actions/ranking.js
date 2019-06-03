@@ -3,6 +3,7 @@ import _ from 'lodash';
 import { URL, myHttpClient, participantIds, startDate } from './index';
 
 export const GET_RANKING = 'GET_RANKING'
+export const CLOSE_SNACKBAR = 'CLOSE_SNACKBAR'
 
 export const getRanking = () => async dispatch => {
   const start = new Date(startDate)
@@ -31,4 +32,8 @@ export const getRanking = () => async dispatch => {
     ranking.push({id: item.id, solutions: item.solutions, rank: count})
   })
   dispatch({type:GET_RANKING, ranking})
+}
+
+export const closeSnackbar = () => async dispatch => {
+  dispatch({type:CLOSE_SNACKBAR})
 }
