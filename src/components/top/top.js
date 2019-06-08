@@ -58,8 +58,8 @@ class Top extends Component{
           </CardContent>
         </Card>
 
-        <Dialog open={this.props.isAccepted} aria-labelledby="simple-dialog-title">
-          { this.props.submissions.length > 0 && <DialogTitle id="simple-dialog-title">Conglatulation!<span className="dialog-span">チーム「{this.props.submissions[0].userId}」</span></DialogTitle>}
+        <Dialog open={this.props.isAccepted} aria-labelledby="simple-dialog-title" className={classes.dialog} fullWidth={true} maxWidth='md'>
+          { this.props.submissions.length > 0 && <DialogTitle id="simple-dialog-title" ><span className={classes.dialogTitle}>Conglatulation!</span><p className={classes.userId}>チーム「{this.props.submissions[0].userId}」</p></DialogTitle>}
         </Dialog>
 
       </div>
@@ -119,6 +119,16 @@ const styles = theme => ({
   },
   flex: {
     display: 'flex'
+  },
+  dialog: {
+    textAlign: 'center',
+  },
+  dialogTitle: {
+    fontSize: 30,
+    color: '#FFD700'
+  },
+  userId: {
+    fontSize: 70
   }
 });
 
