@@ -5,18 +5,7 @@ export const URL = "https://judgeapi.u-aizu.ac.jp"
 
 // 参加者のidリスト
 export const participantIds = [
-  "Fulltea",
-  "MiuraMiumiu",
-  "idsigma",
-  "Lobesta",
-  "t18140526",
-  "graveslayer",
-  "K18140038",
-  "yoyoino",
-  "ktsMaegawa",
-  "iizukayu",
-  "Yang33",
-  "sae18140868"
+  
 ]
 
 // 開始時刻
