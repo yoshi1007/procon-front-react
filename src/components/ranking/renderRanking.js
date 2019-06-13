@@ -13,7 +13,7 @@ export default (props) => (
           item.rank === 1 ? 'first' : item.rank === 2 ? 'second' :item.rank === 3 ? 'third' : 'none'
         ].join(' ')} />{item.rank}
       </StyledTableCell>
-      <StyledTableCell component="th" scope="row">{item.id}</StyledTableCell>
+      <StyledTableCell component="th" scope="row">{props.users[item.id]}</StyledTableCell>
       <StyledTableCell align="left">{item.solutions}</StyledTableCell>
     </TableRow>
   ))

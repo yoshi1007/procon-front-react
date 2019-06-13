@@ -38,7 +38,7 @@ class Ranking extends Component{
             </TableRow>
           </TableHead>
           <TableBody>
-            <RenderRanking ranking={this.props.ranking} />
+            <RenderRanking ranking={this.props.ranking} users={this.props.users} />
           </TableBody>
         </Table>
 
@@ -68,7 +68,8 @@ class Ranking extends Component{
 
 const mapStateToProps = state => ({
   ranking: state.ranking.ranking,
-  isOpenSnackBar: state.ranking.isOpenSnackBar
+  isOpenSnackBar: state.ranking.isOpenSnackBar,
+  users: state.common.users
 })
 
 const mapDispatchToProps = ({ getRanking, closeSnackbar })

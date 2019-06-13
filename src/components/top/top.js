@@ -49,7 +49,7 @@ class Top extends Component{
                     </TableRow>
                   </TableHead>
                   <TableBody>
-                    <RenderSubmissions submissions={this.props.submissions} status={this.props.status} />
+                    <RenderSubmissions submissions={this.props.submissions} status={this.props.status} problems={this.props.problems} users={this.props.users} />
                   </TableBody>
                 </Table>
               </Paper>
@@ -71,7 +71,9 @@ const mapStateToProps = state => ({
   submissions: state.submission.submissions,
   status: state.submission.status,
   remainingTime: state.submission.remainingTime,
-  isAccepted: state.submission.isAccepted
+  isAccepted: state.submission.isAccepted,
+  problems: state.submission.problems,
+  users: state.common.users
 })
 
 const mapDispatchToProps = ({ getSubmissions, getRemainingTime, resetFlag })
