@@ -59,7 +59,7 @@ class Top extends Component{
         </Card>
 
         <Dialog open={this.props.isAccepted} aria-labelledby="simple-dialog-title" className={classes.dialog} fullWidth={true} maxWidth='md'>
-          { this.props.submissions.length > 0 && <DialogTitle id="simple-dialog-title" ><span className={classes.dialogTitle}>Conglatulation!</span><p className={classes.userId}>チーム「{this.props.submissions[0].userId}」</p></DialogTitle>}
+          { this.props.submissions.length > 0 && <DialogTitle id="simple-dialog-title" ><span className={classes.dialogTitle}>Conglatulation!</span><p className={classes.userId}>チーム「{this.props.users[this.props.submissions[0].userId]}」</p></DialogTitle>}
         </Dialog>
 
       </div>

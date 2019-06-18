@@ -1,7 +1,7 @@
 // ユーザー名のマッピング用
 const initialState = {
   users:{
-    'yoshi1007':'temp'
+
   }
 }
 
