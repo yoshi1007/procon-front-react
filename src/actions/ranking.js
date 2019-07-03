@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-import { URL, myHttpClient, participantIds, startDate } from './index';
+import { URL, myHttpClient, participants, startDate } from './index';
 
 export const GET_RANKING = 'GET_RANKING'
 export const CLOSE_SNACKBAR = 'CLOSE_SNACKBAR'
@@ -8,12 +8,12 @@ export const CLOSE_SNACKBAR = 'CLOSE_SNACKBAR'
 export const getRanking = () => async dispatch => {
   const start = new Date(startDate)
   let rankingArray = []
-  for(let i in participantIds){
-    const res = await myHttpClient.get(`${URL}/solutions/users/${participantIds[i]}`)
+  for(let key in participants){
+    const res = await myHttpClient.get(`${URL}/solutions/users/${key}`)
     const result = _.filter(res.data, record => {
       return record.submissionDate > start.getTime()
     })
-    rankingArray.unshift({id: participantIds[i], solutions: result.length})
+    rankingArray.unshift({id: key, solutions: result.length})
   }
   rankingArray = rankingArray.sort((a, b) => {
     let x = a['solutions']

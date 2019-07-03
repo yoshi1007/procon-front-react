@@ -15,11 +15,7 @@ const initialState = {
     'RUNNING'
   ],
   problems: {
-    'ICPC Score Totalizer Software':'問題1',
-    'Millennium':'問題2',
-    'Next Mayor':'問題3',
-    'Tax Rate Changed':'問題4',
-    'Equal Total Scores':'問題5'
+
   },
   remainingTime: '',
   isAccepted: false,
