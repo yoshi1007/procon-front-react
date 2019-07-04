@@ -8,9 +8,6 @@ export const RESET_IS_ACCEPTED_FLAG = 'RESET_ISCORRECT_FLAG'
 export const getSubmissions = () => async dispatch => {
   const res = await myHttpClient.get(`${URL}/submission_records/recent`)
   console.log(res)
-  // const response = _.filter(res.data, submission =>{
-  //   return participants.indexOf(submission.userId) !== -1
-  // })
   const keyArray = Object.keys(participants)
   const response = _.filter(res.data, submission =>{
     return keyArray.indexOf(submission.userId) !== -1
