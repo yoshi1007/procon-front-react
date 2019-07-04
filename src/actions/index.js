@@ -1,12 +1,10 @@
-import axios from 'axios';
+import axios from 'axios'
 
 // AOJ API エンドポイント
-export const URL = "https://judgeapi.u-aizu.ac.jp"
+export const URL = 'https://judgeapi.u-aizu.ac.jp'
 
 // 参加者のidリスト
-export const participants = {
-
-}
+export const participants = {}
 
 // 開始時刻
 export const startDate = '2019-07-01 17:30:00'
@@ -15,5 +13,5 @@ export const startDate = '2019-07-01 17:30:00'
 export const endDate = '2019-07-05 19:30:00'
 
 export const myHttpClient = axios.create({
-  'Access-Control-Allow-Origin':'*'
+  'Access-Control-Allow-Origin': '*'
 })
