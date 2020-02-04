@@ -10,13 +10,7 @@ class Header extends Component{
       <div id='header' className={classes.root}>
         <AppBar position="fixed" className={classes.btcColor}>
           <Toolbar>
-            {/*
-            <IconButton color="inherit" aria-label="Menu" className={classes.menuButton}>
-              <MenuIcon />
-            </IconButton>
-            */}
             <h1>BTC Programing Contest</h1>
-            {/*<Button color="inherit">ランキング</Button>*/}
           </Toolbar>
         </AppBar>
       </div>
