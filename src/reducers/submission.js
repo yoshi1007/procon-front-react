@@ -21,7 +21,7 @@ const initialState = {
   problems: {},
   remainingTime: '',
   isAccepted: false,
-  latestJudgeId: ''
+  latestJudgeId: '',
 }
 
 export default (state = initialState, action) => {
