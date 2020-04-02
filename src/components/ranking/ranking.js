@@ -26,7 +26,6 @@ class Ranking extends Component{
 
   render(){
     const { classes } = this.props
-    console.log(this.props)
     return(
       <Paper className={classes.root}>
         <Table className={classes.table} onClick={()=>this.onClickToGetRanking()}>

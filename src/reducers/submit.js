@@ -1,8 +1,11 @@
 import {
   READ_SUBMISSIONS,
   GET_REMAINING_TIME,
-  RESET_IS_ACCEPTED_FLAG
-} from '../actions/submission'
+  RESET_IS_ACCEPTED_FLAG,
+  SUCCESS_LOGIN,
+  SUCCESS_SUBMIT,
+  SWITCH_LOGIN_FORM_MODAL_STATUS
+} from '../actions/submit'
 
 const initialState = {
   submissions: {},
@@ -22,6 +25,7 @@ const initialState = {
   remainingTime: '',
   isAccepted: false,
   latestJudgeId: '',
+  isShowLoginFormModal: false,
 }
 
 export default (state = initialState, action) => {
@@ -46,6 +50,9 @@ export default (state = initialState, action) => {
 
     case RESET_IS_ACCEPTED_FLAG:
       return { ...state, isAccepted: false }
+
+    case SWITCH_LOGIN_FORM_MODAL_STATUS:
+      return { ...state, isShowLoginFormModal: !action.isShowLoginFormModal }
 
     default:
       return state
