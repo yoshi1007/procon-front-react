@@ -13,5 +13,6 @@ export const startDate = '2019-07-01 17:30:00'
 export const endDate = '2019-07-05 19:30:00'
 
 export const myHttpClient = axios.create({
-  'Access-Control-Allow-Origin': '*'
+  'Access-Control-Allow-Origin': '*',
+  'withCredentials': true
 })

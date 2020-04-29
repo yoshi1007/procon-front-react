@@ -3,8 +3,10 @@ import {
   GET_REMAINING_TIME,
   RESET_IS_ACCEPTED_FLAG,
   SUCCESS_LOGIN,
+  FAILED_LOGIN,
   SUCCESS_SUBMIT,
-  SWITCH_LOGIN_FORM_MODAL_STATUS
+  SWITCH_LOGIN_FORM_MODAL_STATUS,
+  CLOSE_LOGIN_SNACKBAR
 } from '../actions/submit'
 
 const initialState = {
@@ -26,6 +28,8 @@ const initialState = {
   isAccepted: false,
   latestJudgeId: '',
   isShowLoginFormModal: false,
+  responseMessage: '',
+  isOpenSnackBar: false,
 }
 
 export default (state = initialState, action) => {
@@ -51,8 +55,17 @@ export default (state = initialState, action) => {
     case RESET_IS_ACCEPTED_FLAG:
       return { ...state, isAccepted: false }
 
+    case SUCCESS_LOGIN:
+      return { ...state, responseMessage: 'ログインに成功しました', isOpenSnackBar: true, isShowLoginFormModal: false}
+    
+    case FAILED_LOGIN:
+      return { ...state, responseMessage: 'ログインに失敗しました'}
+
     case SWITCH_LOGIN_FORM_MODAL_STATUS:
       return { ...state, isShowLoginFormModal: !action.isShowLoginFormModal }
+
+    case CLOSE_LOGIN_SNACKBAR:
+      return { ...state, isOpenSnackBar: false}
 
     default:
       return state
