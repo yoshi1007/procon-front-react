@@ -7,6 +7,7 @@ export const RESET_IS_ACCEPTED_FLAG = 'RESET_ISCORRECT_FLAG'
 export const SUCCESS_LOGIN = 'SUCCESS_LOGIN';
 export const FAILED_LOGIN = 'FAILED_LOGIN';
 export const SUCCESS_SUBMIT = 'SUCCESS_SUBMIT';
+export const FAILED_SUBMIT = 'FAILED_SUBMIT';
 export const SWITCH_LOGIN_FORM_MODAL_STATUS = 'SWITCH_LOGIN_FORM_MODAL_STATUS'
 export const CLOSE_LOGIN_SNACKBAR = 'CLOSE_LOGIN_SNACKBAR'
 
@@ -43,7 +44,6 @@ export const callLoginApi = (login_form_values) => async dispatch => {
     `${URL}/session`,login_form_values
   ).then(res=>{
     console.log(res)
-    console.log(res.headers['set-cookie'])
     dispatch({ type:SUCCESS_LOGIN, res })
   }).catch(error=>{
     console.log(error.config)
@@ -60,6 +60,7 @@ export const callSubmitApi = (submit_form_values) => async dispatch => {
     dispatch({ type:SUCCESS_SUBMIT, res })
   }).catch((error)=>{
     console.log(error.config)
+    dispatch({ type: FAILED_SUBMIT})
   })
 }
 

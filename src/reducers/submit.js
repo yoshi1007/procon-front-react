@@ -5,6 +5,7 @@ import {
   SUCCESS_LOGIN,
   FAILED_LOGIN,
   SUCCESS_SUBMIT,
+  FAILED_SUBMIT,
   SWITCH_LOGIN_FORM_MODAL_STATUS,
   CLOSE_LOGIN_SNACKBAR
 } from '../actions/submit'
@@ -28,8 +29,12 @@ const initialState = {
   isAccepted: false,
   latestJudgeId: '',
   isShowLoginFormModal: false,
-  responseMessage: '',
+  message: '',
   isOpenSnackBar: false,
+  severity: '',
+  user: {
+    name: '未ログインユーザー'
+  },
 }
 
 export default (state = initialState, action) => {
@@ -56,10 +61,16 @@ export default (state = initialState, action) => {
       return { ...state, isAccepted: false }
 
     case SUCCESS_LOGIN:
-      return { ...state, responseMessage: 'ログインに成功しました', isOpenSnackBar: true, isShowLoginFormModal: false}
+      return { ...state, message: 'ログインに成功しました', user: action.res.data, isOpenSnackBar: true, severity: 'info', isShowLoginFormModal: false}
     
     case FAILED_LOGIN:
-      return { ...state, responseMessage: 'ログインに失敗しました'}
+      return { ...state, message: 'ログインに失敗しました', severity: 'error', isOpenSnackBar: true}
+
+    case SUCCESS_SUBMIT:
+      return { ...state, message: '提出に成功しました', severity: 'info', isOpenSnackBar: true, isShowLoginFormModal: false}
+    
+    case FAILED_SUBMIT:
+      return { ...state, message: '提出に失敗しました', severity: 'error', isOpenSnackBar: true}
 
     case SWITCH_LOGIN_FORM_MODAL_STATUS:
       return { ...state, isShowLoginFormModal: !action.isShowLoginFormModal }

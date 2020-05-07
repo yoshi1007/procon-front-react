@@ -3,6 +3,9 @@ import { connect } from 'react-redux';
 import { reduxForm, Field } from 'redux-form';
 import Dialog from '@material-ui/core/Dialog';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import Button from '@material-ui/core/Button';
 
 import { callLoginApi, switchLoginFormModalStatus } from '../../actions/submit';
 import { renderValidateField } from '../utils/fields';
@@ -26,14 +29,22 @@ class LoginFormModal extends Component{
 	render(){
 		const { handleSubmit, pristine, submitting, invalid } = this.props
 		return(
-			<Dialog open={this.props.isShowLoginFormModal} >
-				<form onSubmit={handleSubmit(this.onSubmitLoginForm)}>
-					<Field name='id' label='id' type="text" component={renderValidateField} />
-					<Field name='password' label='password' type="password" component={renderValidateField} />
-					<input type="button" value="キャンセル" onClick={()=>this.onClickToHideLoginFormModal(this.props.isShowLoginFormModal)} />
-					<input type="submit" value="ログイン" disabled={pristine || submitting || invalid} />
-				</form>
-				<p>{this.props.responseMessage}</p>
+			<Dialog open={this.props.isShowLoginFormModal} fullWidth={true} maxWidth = {'xs'} onClose={()=>this.onClickToHideLoginFormModal(this.props.isShowLoginFormModal)}>
+        <DialogTitle id="session-dialog-title">ログイン</DialogTitle>
+					<form onSubmit={handleSubmit(this.onSubmitLoginForm)}>
+						<DialogContent>
+							<Field name='id' label='id' type="text" component={renderValidateField} />
+							<Field name='password' label='password' type="password" component={renderValidateField} />
+						</DialogContent>
+						<DialogActions>
+							<Button type='button' onClick={()=>this.onClickToHideLoginFormModal(this.props.isShowLoginFormModal)}>
+								キャンセル
+							</Button>
+							<Button type='submit' color="primary" disabled={pristine || submitting || invalid}>
+								ログイン
+							</Button>
+						</DialogActions>
+					</form>
 			</Dialog>
 		)
 	}
@@ -41,7 +52,7 @@ class LoginFormModal extends Component{
 
 const mapStateToProps = state => ({
 	isShowLoginFormModal: state.submit.isShowLoginFormModal,
-	responseMessage: state.submit.responseMessage
+	message: state.submit.message
 })
 
 const mapDispatchToProps = ({ callLoginApi, switchLoginFormModalStatus })
